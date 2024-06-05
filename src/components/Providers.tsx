@@ -9,13 +9,12 @@ import { trpc } from '@/trpc/client'
 import { httpBatchLink } from '@trpc/client'
 
 const Providers = ({ children }: PropsWithChildren) => {
-  const sitelink = process.env.NEXT_PUBLIC_APP_URL
   const [queryClient] = useState(() => new QueryClient())
   const [trpcClient] = useState(() =>
     trpc.createClient({
       links: [
         httpBatchLink({
-          url: `${sitelink}/api/trpc`,
+          url: `${process.env.NEXT_PUBLIC_APP_URL}/api/trpc`,
           fetch(url, options) {
             return fetch(url, {
               ...options,
