@@ -8,7 +8,6 @@ import dotenv from 'dotenv'
 import path from "path";
 import bodyParser from "body-parser";
 import { IncomingMessage } from "http";
-import { stripeWebhookHandler } from "./webHooks";
 import nextBuild from 'next/dist/build'
 import { PayloadRequest } from "payload/types";
 import { parse } from 'url'
@@ -27,9 +26,7 @@ const createContext = ({ req,
 
 export type ExpressContext = inferAsyncReturnType<typeof createContext>
 
-export type WebhookRequest = IncomingMessage & {
-    rawBody: Buffer
-}
+
 const start = async () => {
 
 
