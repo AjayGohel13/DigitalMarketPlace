@@ -4,7 +4,7 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "digital-market-place-three.vercel.app/",
+				hostname: "digital-market-place-81fdemjg4-ajaygohel13s-projects.vercel.app",
 			},
 		],
 	},
